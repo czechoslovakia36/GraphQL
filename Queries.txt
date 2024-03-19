@@ -6,3 +6,12 @@ query ReviewQuery($id: ID!){
     }
   }
 }
+
+
+
+query GameQuery($id: ID!){
+  game
+  (id: $id){
+    title
+  }
+}
