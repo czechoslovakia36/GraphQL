@@ -5,6 +5,8 @@ import {startStandaloneServer} from "@apollo/server/standalone"
 
 
 const server = new ApolloServer({
+    // typeDef --definations of types of data
+    //resolvers
 
 })
 
