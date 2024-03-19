@@ -15,3 +15,17 @@ query GameQuery($id: ID!){
     title
   }
 }
+
+
+//nested queries 
+
+query GameQuery($id: ID!){
+  game
+  (id: $id){
+    title,
+    reviews {
+      rating,
+      content
+    }
+  }
+}

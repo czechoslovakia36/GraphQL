@@ -17,11 +17,31 @@ const resolvers = {
         authors(){
             return _db.authors
         },
+        // Query single data
         review(_,args){
             return _db.reviews.find((review) => review.id ===args.id )
         }
         ,  author(_,args){
             return _db.authors.find((author) => author.id ===args.id )
+        },
+        game(_,args){
+            return _db.games.find((game) => game.id ===args.id )
+        }
+        
+    },
+    Game: {
+        reviews(parent){
+            return _db.reviews.filter((r) => r.game_id ===parent.id)
+        }
+    },
+    Author: {
+        reviews(parent){
+            return _db.reviews.filter((r) => r.author_id ===parent.id)
+        }
+    },
+    Review:{
+        author(parent){
+            return _db.authors.find((a)=> a.id ===parent.author_id)
         },
         game(_,args){
             return _db.games.find((game) => game.id ===args.id )
