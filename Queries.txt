@@ -1,0 +1,8 @@
+query ReviewQuery($id: ID!){
+  review 
+    (id: $id){
+      rating,
+      content
+    }
+  }
+}
