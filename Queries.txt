@@ -29,3 +29,15 @@ query GameQuery($id: ID!){
     }
   }
 }
+
+
+//mutation
+
+mutation DeleteMutation($id:ID!){
+  deleteGame(id: $id) {
+    id,
+    title,
+    platform
+    
+  }
+}
